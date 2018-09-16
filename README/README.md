@@ -51,7 +51,7 @@ not trust it. Software comes with no
 warranty whatsoever. Ya heard? ~-'.'
 ```
 
-:exclamation: You may want to baleet `README.md` because it renders inside the blog. 
+:exclamation: You may want to baleet `README.md` because if it renders inside the blog. 
 
 Enjoy
 
