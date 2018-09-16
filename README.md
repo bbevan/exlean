@@ -22,7 +22,7 @@ git pull origin master
 then
 
 ```
-git remote add upstream https://github.com/username/username.github.io.git
+git remote add myblog https://github.com/username/username.github.io.git
 ```
 
 ## How This Works
