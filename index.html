@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<h1 id="extremely-lean-github-blog-software1">Extremely Lean Github Blog Software<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h1>
+<h1 id="extremely-lean-github-blog-software">Extremely Lean Github Blog Software</h1>
+<p>Personal Blog for Github with FOSS to boot.</p>
+<h2 id="what-is-this">What is this?</h2>
+<p>This project is for users who need extremely lean blogging software for github.io hosted sites.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>install pandoc via <code>sudo zypper in pandoc</code> (on OpenSUSE)</li>
+<li>Go to github.com</li>
+<li>Create a new repository</li>
+<li>Name the new repository <strong>username.github.io</strong></li>
+<li><code>mkdir blog &amp;&amp; cd blog</code></li>
+<li><code>init</code> the new repository, add remote, and pull with</li>
+</ul>
+<pre><code>git init 
+git remote add origin https://github.com/bbevan/exlean 
+git pull origin master</code></pre>
+<p>then</p>
+<pre><code>git remote add myblog https://github.com/username/username.github.io.git</code></pre>
+<h2 id="how-this-works">How This Works</h2>
+<p><code>blog.sh</code> is a five-line shell script that</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Moves <code>blog.md</code> to <code>blog.bak</code></li>
+<li>Concatenates all markdown files within a directory</li>
+<li>Writes the concatenation to <code>blog.md</code></li>
+<li>Converts <code>blog.md</code> to <code>blog.html</code> with css styling via <code>pandoc</code></li>
+<li>Invokes an add, a commit, and a push via <code>git</code></li>
+</ol>
+<h2 id="instructions">Instructions</h2>
+<p>Write new blogposts in Markdown format. Save as <code>file.md</code>. Run <code>sh blog.sh</code>. The script will publish posts in alphabetical order according to file names.</p>
+<p>Example</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"> <span class="fu">sh</span> blog.sh</code></pre></div>
+<p>:bulb: Magic occurs in the background.</p>
+<pre><code>You will be prompted for your github
+username and password. The prompt is
+given by git, not us. If in doubt,do
+not trust it. Software comes with no
+warranty whatsoever. Ya heard? ~-&#39;.&#39;</code></pre>
+<p>:exclamation: You may want to baleet <code>README.md</code> because it renders inside the blog.</p>
+<p>Enjoy</p>
+<p>-Brandon</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Written by bbevan @ http://bbevan.github.io<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
