@@ -11,19 +11,18 @@ This project is for users who need extremely lean blogging software for github.i
 - Go to github.com
 - Create a new repository
 - Name the new repository **username.github.io**
-- `init` the new repository with
+- `mkdir blog && cd blog`
+- `init` the new repository, add remote, and pull with
 
 ```
-git init http://github.com/username/username.github.io.git
-cd username.github.io
+git init 
+git remote add origin https://github.com/bbevan/exlean 
+git pull origin master
 ```
-
-- Clone this repository
+then
 
 ```
-# Remember the . It's important!
-git clone  https://github.com/bbevan/exlean .
-
+git remote add upstream https://github.com/username/username.github.io.git
 ```
 
 ## How This Works
