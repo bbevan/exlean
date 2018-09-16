@@ -41,7 +41,7 @@ Example
 ```bash
  sh blog.sh
 ```
-Magic occurs in the background.
+:bulb: Magic occurs in the background.
 
 ```
 You will be prompted for your github
@@ -50,6 +50,8 @@ given by git, not us. If in doubt,do
 not trust it. Software comes with no
 warranty whatsoever. Ya heard? ~-'.'
 ```
+
+:exclamation: You may want to baleet `README.md` because it renders inside the blog. 
 
 Enjoy
 
